@@ -1,0 +1,460 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ca",
+				"carrino"
+			],
+			[
+				"id",
+				"id_cd"
+			],
+			[
+				"id_",
+				"id_genero"
+			],
+			[
+				"nome",
+				"nomeGenero"
+			],
+			[
+				"pe",
+				"pedido_itens"
+			],
+			[
+				"su",
+				"subtotal"
+			],
+			[
+				"resul",
+				"result"
+			],
+			[
+				"da",
+				"dato"
+			],
+			[
+				"ma",
+				"margin-top"
+			],
+			[
+				"sess",
+				"session_commit"
+			],
+			[
+				"sessi",
+				"session_decode"
+			],
+			[
+				"_",
+				"_SESSION"
+			],
+			[
+				"te",
+				"test"
+			],
+			[
+				"va",
+				"var_dump"
+			],
+			[
+				"el",
+				"else"
+			],
+			[
+				"GE",
+				"_GET"
+			],
+			[
+				"ed",
+				"editarGenrero"
+			],
+			[
+				"sesse",
+				"session_destroy"
+			],
+			[
+				"se",
+				"session_destroy"
+			],
+			[
+				"p",
+				"padding-left"
+			],
+			[
+				"pa",
+				"padding-top"
+			],
+			[
+				"s",
+				"sql"
+			],
+			[
+				"t",
+				"tp"
+			],
+			[
+				"genro",
+				"genero"
+			],
+			[
+				"id_c",
+				"id_compra"
+			],
+			[
+				"forey",
+				"odbc_foreignkeys"
+			],
+			[
+				"f",
+				"fixed"
+			],
+			[
+				"lo",
+				"login"
+			],
+			[
+				"e",
+				"echo\techo \"…\""
+			],
+			[
+				"pri",
+				"price"
+			],
+			[
+				"session",
+				"session_destroy"
+			],
+			[
+				"pr",
+				"product"
+			],
+			[
+				"paddi",
+				"padding-right"
+			],
+			[
+				"b",
+				"border-image"
+			],
+			[
+				"margi",
+				"margin-top"
+			],
+			[
+				"des",
+				"descricao"
+			],
+			[
+				"di",
+				"disponibilidade"
+			],
+			[
+				"pre",
+				"preco"
+			],
+			[
+				"ti",
+				"titulo"
+			],
+			[
+				"nom",
+				"nome_foto"
+			],
+			[
+				"g",
+				"_GET"
+			],
+			[
+				"mysql",
+				"mysql_query"
+			],
+			[
+				"st",
+				"style\tTag"
+			],
+			[
+				"in",
+				"input\tTag"
+			],
+			[
+				"fo",
+				"form\tTag"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/php/htdocs/sistema loja de cds/carrinho.php",
+		"/C/php/htdocs/Petshop/index2.php",
+		"/C/php/htdocs/Petshop/index.php",
+		"/C/php/htdocs/Petshop/evento.php",
+		"/C/php/htdocs/Petshop/editar.php",
+		"/C/php/htdocs/Petshop/conexao.php",
+		"/C/php/htdocs/Petshop/carrinho.php",
+		"/C/php/htdocs/pp/index.php",
+		"/C/php/htdocs/sistema loja de cds/infor.php",
+		"/C/php/htdocs/sistema loja de cds/eventoCompra.php",
+		"/C/php/htdocs/sistema loja de cds/compra.php",
+		"/C/php/htdocs/sistema loja de cds/finalizaCompra.php",
+		"/C/php/htdocs/sistema loja de cds/heade.php",
+		"/C/php/htdocs/sistema loja de cds/index.php",
+		"/C/php/htdocs/sistema loja de cds/indexadm.php",
+		"/C/php/htdocs/sistema loja de cds/detalhe.php",
+		"/C/php/htdocs/sistema loja de cds/conexao.php",
+		"/C/php/htdocs/sistema loja de cds/eventocd.php",
+		"/C/php/htdocs/sistema loja de cds/end.php",
+		"/C/php/htdocs/sistema loja de cds/functions/product.php",
+		"/C/php/htdocs/sistema loja de cds/functions/cart.php",
+		"/C/php/htdocs/sistema loja de cds/evento.php",
+		"/C/php/htdocs/sistema loja de cds/results.php",
+		"/C/php/htdocs/sistema loja de cds/cadastrarcd.php",
+		"/C/php/htdocs/sistema loja de cds/login.php",
+		"/C/php/htdocs/sistema loja de cds/logout.php",
+		"/C/php/htdocs/sistema loja de cds/editarcd.php",
+		"/C/php/htdocs/gg/login.php",
+		"/C/php/htdocs/sistema loja de cds/editardados.php",
+		"/C/php/htdocs/sistema loja de cds/headelog.php",
+		"/C/php/htdocs/sistema loja de cds/cadastrargenero.php",
+		"/C/php/htdocs/sistema loja de cds/action_cliente.php",
+		"/C/php/htdocs/sistema loja de cds/editarGenero.php",
+		"/C/php/htdocs/pp/login.php",
+		"/C/php/htdocs/00vota00.php",
+		"/C/php/htdocs/apagar.php",
+		"/C/php/htdocs/votaçao.html",
+		"/C/php/htdocs/avorp.php",
+		"/C/php/htdocs/img/3movs.php",
+		"/C/php/htdocs/votaçao.php",
+		"/C/php/htdocs/trabalho.html",
+		"/C/php/htdocs/index.php",
+		"/C/php/htdocs/TRABALHO ORIGINAL.html",
+		"/C/php/htdocs/testadocodigo.php",
+		"/C/php/htdocs/Nova pasta/busca/results.php",
+		"/C/php/htdocs/Nova pasta/busca/conexao.php",
+		"/C/php/htdocs/Nova pasta/busca/busca.php",
+		"/C/php/htdocs/sistema loja de cds/cadastrarcliente.php",
+		"/C/php/htdocs/sistema loja de cds/result.php",
+		"/C/php/htdocs/pp/conexao.php",
+		"/C/php/htdocs/CRUD/conexao.php",
+		"/C/php/htdocs/Nova pasta (2)/action_cliente.php",
+		"/C/php/htdocs/Nova pasta (2)/index.php",
+		"/C/php/htdocs/sistema loja de cds/js/custom.js",
+		"/C/php/htdocs/carrinho/functions/product.php",
+		"/C/php/htdocs/carrinho/index.php",
+		"/C/php/htdocs/carrinho/functions/cart.php",
+		"/C/php/htdocs/carrinho/connection.php",
+		"/C/php/htdocs/carrinho/carrinho.php",
+		"/C/php/htdocs/carrinho/indexa.php",
+		"/C/php/htdocs/001re/com os anos/sistema/indexi.php",
+		"/C/php/htdocs/001re/com os anos/sistema/editar.php",
+		"/C/php/htdocs/sistema loja de cds/css/bootstrap.min.css",
+		"/C/php/htdocs/sistema loja de cds/css/custom.css",
+		"/C/php/htdocs/lgcartas/carrinho.php",
+		"/C/php/htdocs/lgcartas/products.sql",
+		"/C/php/htdocs/lgcartas/cart.php",
+		"/C/php/htdocs/Nova pasta (2)/conexao.php",
+		"/C/php/htdocs/001re/com os anos/sistema/cadastro.php",
+		"/C/php/htdocs/gg/index.php",
+		"/C/php/htdocs/001re/com os anos/sistema/action_cliente.php",
+		"/C/php/htdocs/001re/com os anos/sistema/conexao.php",
+		"/C/php/htdocs/001re/com os anos/sistema/script_banco_de_dados.sql",
+		"/C/php/htdocs/001re/com os anos/sistema/script_banco_de_dados.sql~",
+		"/C/install.res.1033.dll",
+		"/C/Users/Adriano/Desktop/abc.html",
+		"/C/php/htdocs/applications.html",
+		"/C/Games/Counter-Strike/hl.exe",
+		"/C/Users/Adriano/Desktop/tset/g.html",
+		"/C/Users/Adriano/Desktop/tset/h.html"
+	],
+	"find":
+	{
+		"height": 26.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"lviyvvvvvvvvvvvvvvvvvvv",
+			"produtos",
+			"codigo",
+			"nome",
+			"id",
+			"resultsCarts",
+			"getProductsByid_cds",
+			"id",
+			"getProductsByid_cds",
+			"produtos",
+			"id",
+			"nome",
+			"loja_site",
+			"title",
+			"nome",
+			"id",
+			"produtos",
+			"ano",
+			"anoLan",
+			"adm"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"o",
+			"cd",
+			"id_cd",
+			"getProductsByids",
+			"id_cd",
+			"getProductsByids",
+			"cd",
+			"id_cd",
+			"titulo",
+			"loja_de_cd",
+			"titulo",
+			"title",
+			"id_cd",
+			"anolancamento",
+			"nivel"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "editarcd.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 150.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
