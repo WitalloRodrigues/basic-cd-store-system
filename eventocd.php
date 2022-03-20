@@ -10,12 +10,12 @@ if(isset($_POST['capa']))$capa = $_POST['capa'];
   if(isset($_POST['desconto']))$desconto = $_POST['desconto'];
 if(isset($_GET['deletarclie'])){
  $sql = "delete from cliente where id_cliente = ".$_GET['deletarclie'];
- mysqli_query($con,$sql);
+ mysql_query($sql,$con);
  echo "<script>alert('cliente deletado com sucesso!')</script>";
  }
 if(isset($_GET['deletar'])){
  $sql = "delete from cd where id_cd = ".$_GET['deletar'];
- mysqli_query($con,$sql);
+ mysql_query($sql,$con);
  echo "<script>alert('cd deletado com sucesso!')</script>";
  }
  if(isset($_GET['editarcd'])){
@@ -33,22 +33,8 @@ if($_FILES['arquivo']['error']!=0){
 	die("não foi possivel fazer o ulpload, erro: <br />". $_arq['erros'][$_FILES['arquivo']['error']]);
 	exit;
 }
-$test = explode('.', $_FILES['arquivo']['name']);
-//var_dump($test);
 
-//$_FILES['arquivo']
-//'name' => string 'teste.jpg' (length=9)
- // 'type' => string 'image/jpeg' (length=10)
-//  'tmp_name' => string 'C:\wamp64\tmp\phpF3E5.tmp' (length=25)
- // 'error' => int 0
-//  'size' => int 9972
-$extensoes=strtolower(end($test));
-//strtolower : coloca minuscula
-//end pega oultimo valor de uma array
-//divide uma strig convertendo em um array de acordo com as diviçoes escolhidas
-//$extensoes=strtolower(end(explode('.', $_FILES['arquivo']['name'])));
-
-
+$extensoes=strtolower(end(explode('.', $_FILES['arquivo']['name'])));
 if (array_search($extensoes, $_arq['extensoes'])===false) {
 	echo "por fazer, envie arquivos com as seguintes extensoes> jpg, png, ou gif";
 
@@ -70,7 +56,7 @@ else if ($_arq['tamanho'] < $_FILES['arquivo']['size']){
 	      }
 
 $sql = "update cd set id_genero='".$genero."',capa= '".$nome_final."',titulo='".$titulo."',preco='".$preco."',anoLancamento='".$anoLancamento."',disponibilidade='".$disponibilidade."',descricao='".$descricao."',desconto='".$desconto."'  where id_cd=".$_GET['editarcd'];
-			          mysqli_query($con,$sql);    
+			          mysql_query($sql,$con);    
  echo"<script> alert('cd atualizado com sucesso')</script>";
 }
 }

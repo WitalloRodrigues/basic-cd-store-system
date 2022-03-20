@@ -11,8 +11,8 @@
 <?php
     include_once 'conexao.php';
     $sql='select * from cliente where id_cliente='.$_GET['editar'];
-	$result = mysqli_query($con,$sql);
-    $linha=mysqli_fetch_array($result);
+    $result=mysql_query($sql,$con);
+    $linha=mysql_fetch_array($result);
  echo "<form action= 'evento.php?editaradm=".$linha['id_cliente']."'method='post'>";?><center>
  	<div id="tabela">
 			<table border="1">

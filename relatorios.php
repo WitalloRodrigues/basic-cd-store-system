@@ -71,8 +71,8 @@ if (isset($_GET['gerar'])) {
     <select  name="inicio" required>
 		 <?php 
            $consultar= "SELECT DISTINCT data from cliente where nivel = 0";
-           $resultado = mysqli_query($con,$consultar) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($resultado))  {
+           $resultado = mysql_query($consultar) or die (mysql_error());
+           while ($linha = mysql_fetch_array($resultado))  {
               $data= $linha['data'];
            
               if ($linha['data']==0) {
@@ -90,8 +90,8 @@ if (isset($_GET['gerar'])) {
    <select name="fim" required >
 	 <?php 
            $consultar= "SELECT DISTINCT data from cliente where nivel =0";
-           $resultado = mysqli_query($con,$consultar) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($resultado))  {
+           $resultado = mysql_query($consultar) or die (mysql_error());
+           while ($linha = mysql_fetch_array($resultado))  {
               $data= $linha['data'];
            
               if ($linha['data']==0) {
@@ -140,8 +140,8 @@ if (isset($_GET['gerar'])) {
 
 
    $sql= "select * from cliente where nivel = 0";
-           $resultado = mysqli_query($con,$sql) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($resultado))  {
+           $result = mysql_query($sql) or die (mysql_error());
+           while ($linha = mysql_fetch_array($result))  {
        if ($linha['nome']=='nulo') {
        
        }else{
@@ -212,8 +212,8 @@ if (isset($_GET['gerar'])) {
     <select  name="inicio" required>
      <?php 
            $consultar= "SELECT DISTINCT anoLancamento from cd";
-           $resultado = mysqli_query($con,$consultar) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($resultado))  {
+           $resultado = mysql_query($consultar) or die (mysql_error());
+           while ($linha = mysql_fetch_array($resultado))  {
               $data= $linha['anoLancamento'];
            
               if ($linha['anoLancamento']==0) {
@@ -231,8 +231,8 @@ if (isset($_GET['gerar'])) {
    <select name="fim" required >
    <?php 
            $consultar= "SELECT DISTINCT anoLancamento from cd";
-           $resultado = mysqli_query($con,$consultar) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($resultado))  {
+           $resultado = mysql_query($consultar) or die (mysql_error());
+           while ($linha = mysql_fetch_array($resultado))  {
               $data= $linha['anoLancamento'];
            
               if ($linha['anoLancamento']==0) {
@@ -279,8 +279,8 @@ if (isset($_GET['gerar'])) {
 
 
    $sql= "select * from cd";
-           $result = mysqli_query($con,$sql) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($result))  {
+           $result = mysql_query($sql) or die (mysql_error());
+           while ($linha = mysql_fetch_array($result))  {
        if ($linha['titulo']=='nulo') {
        
        }else{
@@ -354,8 +354,8 @@ if (isset($_GET['gerar'])) {
 
            $consultar= "SELECT DISTINCT anoLancamento FROM cd WHERE id_cd = (SELECT MAX(id_cd) from cd where venda =(SELECT MAX(venda) from cd ))";
 
-           $resultado = mysqli_query($con,$consultar) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($resultado))  {
+           $resultado = mysql_query($consultar) or die (mysql_error());
+           while ($linha = mysql_fetch_array($resultado))  {
               $data= $linha['anoLancamento'];
                // $idproduto= $linha['itens_prod'];
            
@@ -389,8 +389,8 @@ if (isset($_GET['gerar'])) {
    <select name="fim" required >
    <?php 
            $consultar= "SELECT DISTINCT anoLancamento FROM cd WHERE id_cd = (SELECT MAX(id_cd) from cd where venda =(SELECT MAX(venda) from cd ))";
-           $resultado = mysqli_query($con,$consultar) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($resultado))  {
+           $resultado = mysql_query($consultar) or die (mysql_error());
+           while ($linha = mysql_fetch_array($resultado))  {
               $data= $linha['anoLancamento'];
            
               if ($linha['anoLancamento']==0) {
@@ -451,8 +451,8 @@ if (isset($_GET['gerar'])) {
  <?php 
         
   $sql= "SELECT * from cd ORDER BY venda desc";
-           $result = mysqli_query($con,$sql) or die (mysqli_error());
-           while ($linha = mysqli_fetch_array($result))  {
+           $result = mysql_query($sql) or die (mysql_error());
+           while ($linha = mysql_fetch_array($result))  {
 if ($linha['venda']=="") {
  $ved=0;
 }else{

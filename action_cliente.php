@@ -8,7 +8,6 @@ include "conexao.php";
  //if(isset($_POST['anoLancamento']))$anoLancamento = $_POST['anoLancamento'];
   if(isset($_POST['descricao']))$descricao = $_POST['descricao'];
 if(isset($_POST['desconto']))$desconto = $_POST['desconto'];
-$promocao = 0;
 
 $_arq["pasta"]='fotos/';
 $_arq["tamanho"]=1024 * 1024 *2; //2mb
@@ -24,22 +23,7 @@ if($_FILES['arquivo']['error']!=0){
 	exit;
 }
 
-$test = explode('.', $_FILES['arquivo']['name']);
-//var_dump($test);
-
-//$_FILES['arquivo']
-//'name' => string 'teste.jpg' (length=9)
- // 'type' => string 'image/jpeg' (length=10)
-//  'tmp_name' => string 'C:\wamp64\tmp\phpF3E5.tmp' (length=25)
- // 'error' => int 0
-//  'size' => int 9972
-$extensoes=strtolower(end($test));
-//strtolower : coloca minuscula
-//end pega oultimo valor de uma array
-//divide uma strig convertendo em um array de acordo com as diviçoes escolhidas
-//$extensoes=strtolower(end(explode('.', $_FILES['arquivo']['name'])));
-
-
+$extensoes=strtolower(end(explode('.', $_FILES['arquivo']['name'])));
 if (array_search($extensoes, $_arq['extensoes'])===false) {
 	echo "por fazer, envie arquivos com as seguintes extensoes> jpg, png, ou gif";
 
@@ -61,11 +45,10 @@ else if ($_arq['tamanho'] < $_FILES['arquivo']['size']){
 	      } 
   date_default_timezone_set('America/Sao_Paulo');
 $anoLancamento = date('dmY');
-$sql="insert into cd (id_genero, capa, titulo, preco,anoLancamento, disponibilidade, descricao,promocao,desconto,por,venda) values(
-			          	'".$genero."','".$nome_final."','".$titulo."','".$preco."','".$anoLancamento."','".$disponibilidade."','".$descricao."','".$promocao."','".$desconto."','0','0')"
-					  ;
-					  //var_dump($sql);
-					  mysqli_query($con,$sql);
+$sql=mysql_query("insert into cd (id_genero, capa, titulo, preco,anoLancamento, disponibilidade, descricao,desconto) values(
+			          	'".$genero."','".$nome_final."','".$titulo."','".$preco."','".$anoLancamento."','".$disponibilidade."','".$descricao."','".$desconto."')"
+			          );
+			          mysql_query($sql,$con);
 			          echo"<script>window.location='indexadm.php'</script>";
 			            
 

@@ -41,14 +41,14 @@ $cadtelefoneclie = $_POST['cadtelefoneclie'];
 $cadcpfclie = $_POST['cadcpfclie'];
 $cadsenhaclie = $_POST['cadsenhaclie'];
 $sql="select * from cliente where email='$cademailclie' ";
-$result=mysqli_query($con,$sql);
-$res=mysqli_num_rows($result);
+$result=mysql_query($sql,$con);
+$res=mysql_num_rows($result);
 if($res){
   echo"<script> alert('Cliente já cadstrado!')</script>";  
 }else{
 	echo $res;
     $sql="insert into cliente values(0,'".$cadnomeclie."','".$cadsobrenomeclie."','".$cadtelefoneclie."','".$cadcpfclie."','".$cademailclie."','".$cadsenhaclie."','0','".$data."')";
-    mysqli_query($con,$sql);
+    mysql_query($sql,$con);
     echo "<script> window.location=' login.php'</script>";
     echo"<script> alert('Cliente cadastrado com susseso!')</script>";
 }

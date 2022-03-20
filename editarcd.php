@@ -8,8 +8,8 @@
     include_once 'conexao.php';
     
     $sql='select * from cd where id_cd='.$_GET['editarcd'];
-    $result=mysqli_query($con,$sql);
-    $linha=mysqli_fetch_array($result);
+    $result=mysql_query($sql,$con);
+    $linha=mysql_fetch_array($result);
  echo "<form action= 'eventocd.php?editarcd=".$linha['id_cd']."& antes=".$linha['capa']."'method='post' id='form-contato' enctype='multipart/form-data'>";?><center>
  <div class="row">
 						<label for="nome">Alterar Foto</label>
@@ -31,9 +31,9 @@
 <?php
            include_once "conexao.php";
             $sql = "select * from genero";
-			$result=mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
 ?>
 
   <option value="<?php echo $linha['id_genero'];?>"><?php echo $linha['nomeGenero'];?></option>
@@ -43,8 +43,8 @@
 }
 }
 $sql='select * from cd where id_cd='.$_GET['editarcd'];
-$result=mysqli_query($con,$sql);
-$linha=mysqli_fetch_array($result);
+    $result=mysql_query($sql,$con);
+    $linha=mysql_fetch_array($result);
  ?>
 </select><br>
 			anoLançamento:

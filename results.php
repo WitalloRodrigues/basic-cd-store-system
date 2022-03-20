@@ -19,10 +19,10 @@
 include 'conexao.php';
 $buscar=$_POST['buscar'];
 $genero=$_POST['genero'];
-$sql= mysqli_query($con,"SELECT * FROM  cd where titulo like '%".$buscar."%' and id_genero = '".$genero."'");
-$row = mysqli_num_rows($sql);
+$sql= mysql_query("SELECT * FROM  cd where titulo like '%".$buscar."%' and id_genero = '".$genero."'");
+$row = mysql_num_rows($sql);
 if ($row > 0) {
-  while ($linha = mysqli_fetch_array($sql)) {
+  while ($linha = mysql_fetch_array($sql)) {
 $nome=$linha['titulo'];
   $preco=$linha['preco'];
   $foto=$linha['capa'];

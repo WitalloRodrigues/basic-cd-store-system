@@ -34,9 +34,9 @@
 <?php
            include_once "conexao.php";
             $sql = "select * from genero";
-           $result = mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
 ?>
 
   <option value="<?php echo $linha['id_genero'];?>"><?php echo $linha['nomeGenero'];?></option>

@@ -29,9 +29,9 @@ tbody tr:hover{background-color:#555;color:#fff;};
            include_once "conexao.php";
             $sql = "select c.titulo, c.preco, pi.data ,pi.quantidade from cd as c join pedido_itens as pi on c.id_cd = pi.id_cd where
             pi.id_cliente ='".$id_cliente."';";
-           $result = mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
 
 ?>
 <b>

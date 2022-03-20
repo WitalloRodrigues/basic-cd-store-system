@@ -23,9 +23,8 @@ $pdf->SetFont('Arial','',12);
 	$pdf->Ln();
 
 $sql="SELECT * FROM cliente WHERE data BETWEEN $inicio AND $fim  ";
-//var_dump($sql);//quando tiver somente um usurio cadastrado fs
-$exe_sql=mysqli_query($con,$sql) or die (mysqli_error());
-while ($resultado=mysqli_fetch_array($exe_sql)) {
+$exe_sql=mysql_query($sql) or die (mysql_error());
+while ($resultado=mysql_fetch_array($exe_sql)) {
 
      if ($resultado['nome']=='nulo') {
      	
@@ -63,8 +62,8 @@ $pdf->Cell(6,1,"cds",0,1,'R');
 	$pdf->Ln();
 
 $sql="SELECT * FROM cd WHERE anoLancamento BETWEEN '$inicio' AND '$fim'  ";
-$exe_sql=mysqli_query($con,$sql) or die (mysqli_error());
-while ($resultado=mysqli_fetch_array($exe_sql)) {
+$exe_sql=mysql_query($sql) or die (mysql_error());
+while ($resultado=mysql_fetch_array($exe_sql)) {
 
      if ($resultado['id_cd']=='nulo') {
      	
@@ -121,8 +120,8 @@ $pdf->SetFont('Arial','',12);
 	$pdf->Ln();
 
 $sql="SELECT * FROM cd WHERE anoLancamento BETWEEN '$inicio' AND '$fim' ORDER BY venda desc ";
-$exe_sql=mysqli_query($con,$sql) or die (mysqli_error());
-while ($resultado=mysqli_fetch_array($exe_sql)) {
+$exe_sql=mysql_query($sql) or die (mysql_error());
+while ($resultado=mysql_fetch_array($exe_sql)) {
 
      if ($resultado['id_cd']=='nulo') {
      	

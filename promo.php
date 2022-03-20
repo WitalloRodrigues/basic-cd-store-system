@@ -20,9 +20,9 @@ include "conexao.php";
  
            include_once "conexao.php";
             $sql = "select * from cd WHERE id_cd ='".$promocao."'";
-           $result = mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
       		$desconto = $linha['desconto'];
 				}
 	}
@@ -34,9 +34,9 @@ if(isset($_GET['despromocao'])){
  
            include_once "conexao.php";
             $sql = "select * from cd WHERE id_cd ='".$despromocao."'";
-			$result = mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
       		$desconto = $linha['desconto'];
 				}
 	}
@@ -46,14 +46,14 @@ if(isset($_GET['despromocao'])){
 	$preco = $_GET['preco'];
 	$final = $preco ;
  $sql = "UPDATE `cd` SET `promocao` = '0' , por =".$final." WHERE `cd`.`id_cd` = ".$_GET['despromocao'];
- mysqli_query($con,$sql);
+ mysql_query($sql,$con);
 }
 if((isset($_GET['promocao'])) and (isset($_GET['preco']))){
 	$preco = $_GET['preco'];
 	$cal = ($preco * $desconto)/100;
 	$final = $preco - $cal;
  $sql = "UPDATE `cd` SET `promocao` = '1' , por =".$final." WHERE `cd`.`id_cd` = ".$_GET['promocao'];
- mysqli_query($con,$sql);
+ mysql_query($sql,$con);
 }
 echo"<script>window.location='indexadm.php'</script>";
 ?>

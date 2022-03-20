@@ -98,15 +98,15 @@ if (isset($_GET['tets'])) {
 }
 if (isset($tets)) {
 $sql ="INSERT INTO `pedido` (`id_pedido`, `id_cliente`,`total`) VALUES (NULL,'".$id_cliente."','".$total."')";
-mysqli_query($con,$sql);
+mysql_query($sql,$con);
 
    if (isset($_SESSION['dados'])) {
   $test = $_SESSION['dados'];
     foreach ($test as $key) {
         $sql = "select * from cd where id_cd = '".$key['id_cd']."'";
-                            $result = mysqli_query($con,$sql);
+                            $result = mysql_query($sql,$con);
                             if($result){
-                            while($linha = mysqli_fetch_array($result)){
+                            while($linha = mysql_fetch_array($result)){
                                 $estoque = $linha['disponibilidade'];
                                 $venda =$linha['venda'];
                             }
@@ -115,9 +115,9 @@ mysqli_query($con,$sql);
                         $dim = $estoque - $qtd ;
                         $alm = $venda + $qtd;
  $sql = "update cd set disponibilidade='".$dim."' where id_cd=".$key['id_cd'];
-                      mysqli_query($con,$sql);  
+                      mysql_query($sql,$con);  
 $sql = "update cd set venda='".$alm."' where id_cd=".$key['id_cd'];
-                      mysqli_query($con,$sql); 
+                      mysql_query($sql,$con); 
      }//fim do foreach
      }//fim do issert 
      if (isset($_POST['tp'])) {

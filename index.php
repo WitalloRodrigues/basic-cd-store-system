@@ -26,8 +26,8 @@ if (isset($_SESSION['adm'])) {
   	body{
   		margin-top: 10%;
   	}#dento1{
-		margin-top: -50;
-		
+		margin-left: -98px;
+    	margin-top: -223;
     }
   </style>
 </head>
@@ -55,9 +55,9 @@ if (isset($_SESSION['adm'])) {
 
 				            include_once "conexao.php";
 				            $sql = "select count(*) from cd";
-							$result = mysqli_query($con,$sql);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 				            	 $qtttcd = $linha['count(*)'         ];}}
 					
 		if ($qtttcd >= 1) {
@@ -86,9 +86,9 @@ if (isset($_SESSION['adm'])) {
         		<?php
 				            include_once "conexao.php";
 				            $sql = "SELECT * FROM cd WHERE id_cd = (SELECT MAX(id_cd) from cd)";
-							$result = mysqli_query($con,$sql);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 					?>
 					<?php $disponibilidade =$linha['disponibilidade'];
 						            if ($disponibilidade <= 0){
@@ -112,9 +112,9 @@ if (isset($_SESSION['adm'])) {
         		<?php
 				            include_once "conexao.php";
 				            $sql = "SELECT * FROM cd WHERE id_cd = (SELECT MAX(id_cd) from cd where venda =(SELECT MAX(venda) from cd ))";
-							$result = mysqli_query($con,$sql);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 					?>
 					<?php $disponibilidade =$linha['disponibilidade'];
 						            if ($disponibilidade <= 0){
@@ -136,9 +136,9 @@ if (isset($_SESSION['adm'])) {
         		<?php
 				            include_once "conexao.php";
 				            $sql = "SELECT * FROM cd WHERE id_cd = (SELECT MAX(id_cd) from cd where promocao = '1')";
-							$result = mysqli_query($con,$sql);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 					?>
 					<?php $disponibilidade =$linha['disponibilidade'];
 						            if ($disponibilidade <= 0){
@@ -176,9 +176,9 @@ if (isset($_SESSION['adm'])) {
 
 				            include_once "conexao.php";
 				            $sql = "select count(*) from cd where promocao = '1';";
-							$result = mysqli_query($con,$sql);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 				            	 $test = $linha['count(*)'         ];}}
 					
 		if ($test >= 1) {
@@ -203,9 +203,9 @@ if (isset($_SESSION['adm'])) {
 					<?php
 				            include_once "conexao.php";
 				            $sql = "select c.capa , c.titulo , c.preco , c.disponibilidade , g.nomeGenero , c.anoLancamento , c.descricao , c.id_cd , c.promocao ,c.por , c.desconto from cd as c join genero as g on c.id_genero = g.id_genero where promocao = '1' ";
-							$result = mysqli_query($con,$sql);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 					?>
 						<b>
 						<tbody>
@@ -245,9 +245,9 @@ if (isset($_SESSION['adm'])) {
 
 				            include_once "conexao.php";
 				            $sql = "select count(*) from cd ";
-							$result = mysqli_query($con,$sql);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 				            	 $test2 = $linha['count(*)'         ];}}
 					
 		if ($test2 >= 1) {
@@ -269,9 +269,9 @@ if (isset($_SESSION['adm'])) {
 					<?php
 				            include_once "conexao.php";
 				            $sql = "select c.capa , c.titulo , c.preco , c.disponibilidade , g.nomeGenero , c.anoLancamento , c.descricao , c.id_cd , c.promocao , c.por from cd as c join genero as g on c.id_genero = g.id_genero ";
-							$result = mysqli_query($con,$sql);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 					?>
 						<b>
 						<tbody>
@@ -334,6 +334,15 @@ if (isset($_SESSION['adm'])) {
 </head>
 <body>
  
+<ul id="sortable">
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 1</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 2</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 3</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 4</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 5</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 6</li>
+  <li class="ui-state-default"><span class="ui-icon ui-icon-arrowthick-2-n-s"></span>Item 7</li>
+</ul>
  
  
 </body>
@@ -343,14 +352,21 @@ if (isset($_SESSION['adm'])) {
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>jQuery UI Datepicker - Default functionality</title>
   <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
   <link rel="stylesheet" href="/resources/demos/style.css">
   <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
   <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   <script>
+  $( function() {
+    $( "#datepicker" ).datepicker();
+  } );
   </script>
 </head>
 <body>
+ 
+<p>Date: <input type="text" id="datepicker"></p>
+ 
  
 </body>
 </html>

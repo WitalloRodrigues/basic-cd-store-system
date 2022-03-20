@@ -80,9 +80,9 @@
 
                     include_once "conexao.php";
                     $sql = "select count(*) from cd;";
-                    $result=mysqli_query($con,$sql);
+                    $result = mysql_query($sql,$con);
                     if($result){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysql_fetch_array($result)){
                        $pum = $linha['count(*)'         ];}}?>
 
 <?php if ($pum > 0): ?>
@@ -93,9 +93,9 @@
 <?php
            include_once "conexao.php";
             $sql = "select DISTINCT g.nomeGenero , g.id_genero from cd as c join genero as g on c.id_genero = g.id_genero where c.id_genero = g.id_genero";
-            $result=mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
 ?>
 
 	<option value="<?php echo $linha['id_genero'];?>"><?php echo $linha['nomeGenero'];?></option>
@@ -157,9 +157,9 @@
 
                     include_once "conexao.php";
                     $sql = "select count(*) from cd;";
-                    $result = mysqli_query($con,$sql);
+                    $result = mysql_query($sql,$con);
                     if($result){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysql_fetch_array($result)){
                        $test = $linha['count(*)'         ];}}?>
 
 <?php if ($test >= 1 ){ ?>
@@ -170,9 +170,9 @@
 <?php
            include_once "conexao.php";
             $sql = "select DISTINCT g.nomeGenero , g.id_genero from cd as c join genero as g on c.id_genero = g.id_genero where c.id_genero = g.id_genero";
-            $result = mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
 ?>
 
   <option value="<?php echo $linha['id_genero'];?>"><?php echo $linha['nomeGenero'];?></option>

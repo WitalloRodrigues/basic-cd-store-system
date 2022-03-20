@@ -17,9 +17,9 @@ if (isset($_SESSION['nor'])==0) {
  <?php
            include_once "conexao.php";
             $sql = "select * from pedido where id_cliente =".$id_cliente;
-           $result = mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
 ?><?php $num =  $linha['id_pedido'];
 $_SESSION['pedido'] = $num ;?>
 <?php }} ?>
@@ -34,7 +34,8 @@ $date = date('d-m-Y | H:i:s'); ?>
   $test = $_SESSION['dados'];
 
     foreach ($test as $key) {
-$sql="INSERT INTO `pedido_itens` (`id_pedido`, `id_cliente`, `id_cd`, `quantidade`, `data`) VALUES ('".$num."','".$id_cliente."','".$key['id_cd']."','".$key['quantity']."','".$date."')";mysqli_query($con,$sql);
+$sql="INSERT INTO `pedido_itens` (`id_pedido`, `id_cliente`, `id_cd`, `quantidade`, `data`) VALUES ('".$num."','".$id_cliente."','".$key['id_cd']."','".$key['quantity']."','".$date."')";
+mysql_query($sql,$con);
     }
 }  
     echo"<script> alert('comprado com sucesso')</script>";   

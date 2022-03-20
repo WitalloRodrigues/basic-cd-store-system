@@ -34,15 +34,15 @@ if((isset($_POST['email'])==0) and (isset($_POST['senha'])==0)){
 $email = $_POST['email'];
 $senha = $_POST['senha'];
 $sql="select * from cliente where email='$email' and senha='$senha'";
-$result = mysqli_query($con,$sql);
-$res=mysqli_num_rows($result);
+$result=mysql_query($sql,$con);
+$res=mysql_num_rows($result);
 if($res){}else{
 	echo "<script>alert('Login ou Senha invalidos')</script>";
 }
-$get=mysqli_query($con,"select * from cliente where email='$email' and senha='$senha'");
-$num = mysqli_num_rows($get);
+$get=mysql_query("select * from cliente where email='$email' and senha='$senha'");
+$num = mysql_num_rows($get);
 if($num == 1){
-	while ($percorrer = mysqli_fetch_array($get)) {
+	while ($percorrer = mysql_fetch_array($get)) {
 		$nivel = $percorrer['nivel'];
 		$nome = $percorrer['nome'];
 		$id = $percorrer['id_cliente'];

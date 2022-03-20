@@ -11,30 +11,30 @@ include_once'conexao.php';
  
 if(isset($_GET['editar'])){
  $sql = "update cliente set nome= '".$nome."',sobreNome='".$sobreNome."',email='".$email."',cpf='".$cpf."',telefone='".$telefone."',senha='".$senha."'  where id_cliente=".$_GET['editar'];
- mysqli_query($con,$sql);
+ mysql_query($sql,$con);
  echo"<script> alert('dados atualizado com sucesso')</script>";
   echo"<script>window.location='index.php'</script>";
  }
  if(isset($_GET['cadastrar'])){
-	$sql=mysqli_query($con,"insert into genero (nomeGenero) values('".$genero."')");
-	mysqli_query($con,$sql);
-	echo"<script>window.location='indexadm.php'</script>";
+	$sql=mysql_query("insert into genero (nomeGenero) values('".$genero."')");
+			          mysql_query($sql,$con);
+			          echo"<script>window.location='indexadm.php'</script>";
  echo"<script> alert('cd cadastrado com sucesso')</script>";
  } if(isset($_GET['editarGenero'])){
 	$sql = "update genero set nomeGenero='".$genero."'  where id_genero=".$_GET['editarGenero'];
-	mysqli_query($con,$sql);
-	echo"<script> alert('cd atualizado com sucesso')</script>";
+			          mysql_query($sql,$con);    
+ echo"<script> alert('cd atualizado com sucesso')</script>";
 			          echo"<script>window.location='indexadm.php'</script>";
  }
  if(isset($_GET['deletar'])){
  	$sql="delete from genero where id_genero = ".$_GET['deletar'];
-	 mysqli_query($con,$sql);
-	 echo "<script>alert('genero deletado com sucesso!')</script>";
+ mysql_query($sql,$con);
+ echo "<script>alert('genero deletado com sucesso!')</script>";
  echo"<script>window.location='indexadm.php'</script>";
  }
  if(isset($_GET['editaradm'])){
  $sql = "update cliente set nome= '".$nome."',sobreNome='".$sobreNome."',email='".$email."',cpf='".$cpf."',telefone='".$telefone."',senha='".$senha."'  where id_cliente=".$_GET['editaradm'];
- mysqli_query($con,$sql);
+ mysql_query($sql,$con);
  echo"<script> alert('dados do cliente atualizado com sucesso')</script>";
   echo"<script>window.location='indexadm.php'</script>";
  }

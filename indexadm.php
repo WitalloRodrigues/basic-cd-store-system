@@ -26,7 +26,7 @@
       margin-left: 2%;
   	}#listcd{
   		margin-left: 20%;
-  		margin-top:-12%;
+  		margin-top:-22%;
   	}#cadcd{
   		margin-left: 80%;
   		margin-top: 10%;
@@ -64,9 +64,9 @@
 
                     include_once "conexao.php";
                     $sql = "select count(*) from genero;";
-                    $result = mysqli_query($con,$sql);
+                    $result = mysql_query($sql,$con);
                     if($result){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysql_fetch_array($result)){
                        $test = $linha['count(*)'         ];}}
           
     if ($test >= 1) {
@@ -85,9 +85,9 @@
 
                     include_once "conexao.php";
                     $sql = "select count(*) from cliente where nivel = 0;";
-                    $result = mysqli_query($con,$sql);
+                    $result = mysql_query($sql,$con);
                     if($result){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysql_fetch_array($result)){
                        $qtcl = $linha['count(*)'         ];}}
           
     if ($qtcl >= 1) {
@@ -117,9 +117,9 @@ tbody tr:hover{background-color:#555;color:#fff;};
       <?php
            include_once "conexao.php";
             $sql = "select * from cliente where nivel = '0'";
-            $result = mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
 ?>
 <b>
 <tbody id="myTable">
@@ -144,9 +144,9 @@ _________________________________
 
                     include_once "conexao.php";
                     $sql = "select count(*) from genero;";
-                    $result = mysqli_query($con,$sql);
+                    $result = mysql_query($sql,$con);
                     if($result){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysql_fetch_array($result)){
                        $qtge = $linha['count(*)'         ];}}
           
     if ($qtge >= 1) {
@@ -175,9 +175,9 @@ tbody tr:hover{background-color:#555;color:#fff;};
       <?php
            include_once "conexao.php";
             $sql = "select * from genero";
-            $result = mysqli_query($con,$sql);
+           $result = mysql_query($sql,$con);
             if($result){
-            while($linha = mysqli_fetch_array($result)){
+            while($linha = mysql_fetch_array($result)){
 ?>
 <b>
 <tbody id="myTable">
@@ -204,9 +204,9 @@ tbody tr:hover{background-color:#555;color:#fff;};
 
                     include_once "conexao.php";
                     $sql = "select count(*) from cd;";
-                    $result = mysqli_query($con,$sql);
+                    $result = mysql_query($sql,$con);
                     if($result){
-                    while($linha = mysqli_fetch_array($result)){
+                    while($linha = mysql_fetch_array($result)){
                        $qtcd = $linha['count(*)'         ];}}
           
     if ($qtcd >= 1) {
@@ -236,10 +236,9 @@ tbody tr:hover{background-color:#555;color:#fff;};
 					<?php
 				            include_once "conexao.php";
 				            $sql = "select c.capa , c.titulo , c.preco , c.disponibilidade , g.nomeGenero , c.anoLancamento , c.descricao , c.id_cd , c.promocao ,c.por from cd as c join genero as g on c.id_genero = g.id_genero ";
-                    $result = mysqli_query($con,$sql);
-                    //var_dump($result);
+				            $result = mysql_query($sql,$con);
 				            if($result){
-				            while($linha = mysqli_fetch_array($result)){
+				            while($linha = mysql_fetch_array($result)){
 					?>
 						<b>
 						<tbody>
@@ -274,7 +273,7 @@ tbody tr:hover{background-color:#555;color:#fff;};
 						<?php
 						          }//fim do while
 						          }//fim do if
-						           mysqli_close($con);  
+						           mysql_close($con);  
 						?>
 						</table>
             <?php } ?>
