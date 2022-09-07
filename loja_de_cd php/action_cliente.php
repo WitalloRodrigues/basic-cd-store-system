@@ -44,10 +44,10 @@ $anoLancamento = date('d-m-Y');
 $sql=("insert into cd (id_genero, capa, titulo, preco,anoLancamento, disponibilidade, descricao,promocao,desconto,por,venda) values(
 			          	'".$genero."','".$nome_final."','".$titulo."','".$preco."','".$anoLancamento."','".$disponibilidade."','".$descricao."','".$promocao."','".$desconto."','0','0')"
 			          );
-								echo $sql;
+								//echo $sql;
 
 			          mysqli_query($con ,$sql);
-			          //echo"<script>window.location='indexadm.php'</script>";
+			          echo"<script>window.location='indexadm.php'</script>";
 			            
 
 }
